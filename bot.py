@@ -370,12 +370,8 @@ def main() -> None:
         # Add error handler
         application.add_error_handler(error_handler)
 
-        # Run the bot with clean shutdown
-        application.run_polling(
-            allowed_updates=Update.ALL_TYPES,
-            drop_pending_updates=True,
-            close_loop=False
-        )
+        # Run the bot in polling mode
+        application.run_polling()
 
     except Exception as e:
         logger.error(f"Error starting bot: {e}")
